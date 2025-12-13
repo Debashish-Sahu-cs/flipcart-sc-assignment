@@ -8,9 +8,10 @@ import {MyCart} from "./components/MyCart"
 import NotFound from "./components/NotFound";
 import { createContext, useState } from "react";
 import CartDisplay from "./components/CartDisplay";
+import LoginPage from "./components/LoginPage";
 
 export default function App() {
-  let Cart = createContext([]);
+  
   const[addItem,setAddedItem] = useState([]);
   return (
     <div>
@@ -19,6 +20,7 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />}/>
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/home/" element={<Home />}/>
           <Route path="/home/:item/:id" element={<SelectedProduct />}/>
           <Route path="/home/category/:category" element={<CategoriesedProduct />}/>

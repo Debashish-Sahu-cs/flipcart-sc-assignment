@@ -13,9 +13,12 @@ export default function CartDisplay() {
             setProduct(filteredProduct);
         }
         fetchProducts();
-        console.log([...addItem]);
     }, []);
-
+    function removeFromCart(index){
+        let arrId = [...addItem];
+        arrId.splice(index,1);
+        setAddedItem(arrId);
+    }
   return (
     <div>
       <div className="row">
@@ -31,6 +34,7 @@ export default function CartDisplay() {
                             <p className="card-text">{item.description.slice(0,200)+"..."} </p>
                         </div>
                         <button to={`/home/${item.title}`}className="btn btn-warning py-2 mb-4">See details</button>
+                        <button className="btn btn-outline-danger" onClick={() => removeFromCart(index)} > Remove from cart </button>
                     </Link>
                 ))
                 }

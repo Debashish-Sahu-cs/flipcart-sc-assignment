@@ -15,7 +15,7 @@ export default function Navbar() {
 
 
   let location = useLocation();
-  if(location.pathname === "/"){
+  if(location.pathname === "/" || location.pathname === "/login"){
    return ;
   }
    
